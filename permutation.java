@@ -79,8 +79,8 @@ public class permutation {
 		System.out.println("Total Permutations: " + count[0] +"\n");
 		}
 	
-	private static void permute(String[] elements, String current, boolean[] used, int r, int[] count) {
-		if (current.length() == r) {
+	private static void permute(String[] elements, String current, boolean[] used, int perm, int[] count) {
+		if (current.length() == perm) {
 			System.out.print(current + "\n");
 			count[0]++;
 			return;
@@ -89,7 +89,7 @@ public class permutation {
 		for (int i = 0; i < elements.length; i++) {
 			if (!used[i]) {
 				used[i] = true;
-				permute(elements, current + elements[i], used, r, count);
+				permute(elements, current + elements[i], used, perm, count);
 				used[i] = false;
 				}
 			}
